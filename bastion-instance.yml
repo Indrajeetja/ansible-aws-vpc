@@ -27,7 +27,7 @@
       name: Bastion-host-sg
       description: Security Group for bastion host
       region: "{{region}}"
-      vpc_id: "{{vpc-0e97b085f8d962f0f}}"
+      vpc_id: "{{vpcid}}"
       rules:
         - porto: tcp
           from_port: 22
@@ -53,4 +53,5 @@
         Project: Vprofile
         Owner: Devops Team
       group_id: "{{BastionSG_out.group_id}}"
+      vpc_subnet_id: "{{pubsub1id}}"
      register: bastionHost_out
