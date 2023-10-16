@@ -22,6 +22,7 @@
       dest: "./bastion-key.pem"
       mode: 0600
      when: key_out.changed
+
    - name: create security group
      ec2_group:
       name: Bastion-host-sg
@@ -33,7 +34,7 @@
           from_port: 22
           to_port: 22
           cidr_ip: "{{MYIP}}"
-      register: BastionSG_out
+     register: BastionSG_out
 
    - name: Creating Bastion host  
      ec2: 
